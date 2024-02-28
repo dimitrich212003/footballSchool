@@ -1,0 +1,226 @@
+//====================================================================================================
+$green: #00732e;
+$whiteText: #f2f6fa;
+
+body.lock {
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100vw;
+  background-color: #fff;
+  height: 60px;
+  z-index: 1000;
+  color: #2e363e !important;
+
+  // .header__container
+  &__container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__logo
+  &__logo {
+    & > a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: relative;
+      z-index: 15;
+    }
+    &.active > a > .header__logo-img {
+      display: none;
+    }
+    &.active {
+      color: $whiteText;
+    }
+  }
+
+  &__logo-img-active,
+  &__logo-img {
+    width: 70px;
+    height: 60px;
+  }
+
+  // .header__logo-text
+  &__logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  // .header__nav
+  &__nav {
+    @media (max-width: $tablet) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, #262727, #010100);
+      padding: 100px 30px 30px 30px;
+      transform: translate(-200%, 0);
+      transition: 0.3s ease 0s;
+      &::before {
+        content: "";
+        background-image: url("/img/hellocrishMobile.png");
+        background-size: 100%;
+        position: absolute;
+        right: -100px;
+        bottom: 0;
+        width: 85%;
+        padding-top: 135.95%;
+        background-repeat: no-repeat;
+      }
+    }
+    &.active {
+      transform: translate(0px, 0px);
+    }
+  }
+  // .header__nav-list
+  &__nav-list {
+    display: flex;
+    gap: 15px;
+    @media (max-width: $tablet) {
+      display: block;
+      color: $whiteText;
+    }
+  }
+  // .header__nav-item
+  &__nav-item {
+    line-height: 1;
+    position: relative;
+    @media (min-width: $tablet) {
+      &::before {
+        content: "";
+        transition: transform 0.3s ease;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #2e363e;
+        transform-origin: left;
+        transform: scaleX(0);
+      }
+      &:hover {
+        &::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      margin: 0 0 30px 0;
+      font-size: 24px;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  // .header__telephone
+  &__telephone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  // .header__telephone-icon
+  &__telephone-icon {
+  }
+  // .header__telephone-data
+  &__telephone-data {
+    display: flex;
+    flex-direction: column;
+  }
+  // .header__telephone-number
+  &__telephone-number {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 152%;
+  }
+  // .header__telephone-time-for-call
+  &__telephone-time-for-call {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 150%;
+  }
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 15;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+    &.active {
+      span,
+      &::before,
+      &::after {
+        background-color: $whiteText;
+      }
+    }
+
+    &.active {
+      span {
+      transform: scale(0)translate(0px, -50px);
+      }
+      &::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);  
+      }
+      &::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);  
+      }
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

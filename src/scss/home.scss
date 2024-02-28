@@ -1,0 +1,482 @@
+//====================================================================================================
+$green: #00732e;
+$whiteText: #f2f6fa;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+.life-footbal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $green;
+  border-radius: 5px;
+  color: $whiteText;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 11, 8);
+  max-width: 150px;
+  @include adaptiveValue("max-width", 150, 120);
+  height: 40px;
+}
+.btn {
+  font-family: "Montserrat", sans-serif;
+  padding: 30px 50px;
+  background-color: $green;
+  border-radius: 5px;
+  color: $whiteText;
+  font-weight: 500;
+  @include adaptiveValue("width", 450, 330);
+  height: 80px;
+  @include adaptiveValue("font-size", 18, 12);
+  @media (min-width: $tablet) {
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $green;
+      border-radius: 5px;
+      z-index: -2;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken($green, 10%);
+      transition: all 0.3s;
+      border-radius: 5px;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title {
+  font-weight: 500;
+  @include adaptiveValue("font-size", 36, 28);
+  @include adaptiveValue("line-height", 50, 40);
+  text-align: center;
+  color: #2e363e;
+}
+
+.black-section {
+  color: $whiteText;
+  background-image: linear-gradient(to right, #262727, #010100);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: relative;
+}
+
+//section hello
+.main {
+  // .main__section
+  &__section {
+  }
+  // .main__container
+  &__container {
+  }
+  // .main__helo-section
+  &__helo-section {
+    @include adaptiveValue("height", 1100, 950);
+  }
+  &__hello-container {
+    height: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("/img/hellocrish.png");
+      @media (max-width: $mobile) {
+        background-image: url("/img/hellocrishMobile.png");
+        width: 85%;
+        padding-top: 135.95%;
+      }
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 5;
+      right: -100px;
+      bottom: 0;
+      width: 55%;
+      padding-top: 87.95%;
+    }
+    &::after {
+      content: "";
+      background-image: url("/img/helloclouds.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: -17%;
+      width: 134%;
+      padding-top: 19%;
+    }
+  }
+  // .main__hello-content
+  &__hello-content {
+    max-width: 36.25rem;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 40, 20);
+    position: absolute;
+    z-index: 15;
+    top: 15%;
+    @media (max-width: $mobile) {
+      top: 20%;
+    }
+  }
+  // .main__life-footbal
+  &__life-footbal {
+  }
+  // .main__hello-title
+  &__hello-title {
+    font-weight: 700;
+    font-size: 48px;
+    @include adaptiveValue("font-size", 48, 36);
+    line-height: 60px;
+    @media (max-width: $tablet) {
+      line-height: 55px;
+    }
+    @media (max-width: $mobile) {
+      line-height: 50px;
+    }
+  }
+  // .main__hello-subtitle
+  &__hello-subtitle {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 24px;
+    @include adaptiveValue("font-size", 24, 18);
+    line-height: 143%;
+  }
+  // .main__hello-btn
+  &__hello-btn {
+    @media (max-width: $mobile) {
+      margin-top: 40px;
+      // align-self: center;
+    }
+  }
+}
+
+//section training programm
+.main {
+  // .main__training-programm
+  &__training-programm {
+    background-image: url("@img/trainingProgramBg.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    height: 1050px;
+    padding-top: 100px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue("height", 2200, 2140);
+      @include adaptiveValue("padding-top", 100, 60);
+    }
+    color: #2e363e;
+  }
+
+  // .main__section
+  &__training-programm-title {
+    @include adaptiveValue("margin-bottom", 40, 30);
+  }
+  // .main__training-programm-cards
+  &__training-programm-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    @include adaptiveValue("margin-bottom", 40, 30);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  // .main__training-program-item
+  &__training-program-item {
+    background-color: #f2f6fa;
+    border-radius: 10px;
+    height: 524px;
+    width: 350px;
+    transition: all 0.2s ease;
+    position: relative;
+    @media (min-width: $tablet) {
+      position: relative;
+      top: 0;
+      &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        top: -2px;
+      }
+    }
+  }
+  // .main__training-programm-item-img
+  &__training-programm-item-img {
+    & > img {
+      max-width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+  }
+  // .main__training-programm-item-content
+  &__training-programm-item-content {
+    padding: 40px 30px;
+  }
+  // .main__training-programm-item-text
+  &__training-programm-item-text {
+    margin-bottom: 50px;
+  }
+  // .main__training-programm-item-title
+  &__training-programm-item-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  &__training-programm-item-description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  // .main__training-programm-item-price-and-btn
+  &__training-programm-item-price-and-btn {
+    position: absolute;
+    bottom: 7%;
+  }
+  // .main__training-programm-item-price
+  &__training-programm-item-price {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  // .main__training-programm-item-btn
+  &__training-programm-item-btn {
+    @include adaptiveValue("width", 168, 140);
+    height: 55px;
+    @include adaptiveValue("font-size", 16, 12);
+    padding: 0;
+  }
+  // .main__training-programm-text-info
+  &__training-programm-text-info {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 143%;
+    & > p {
+      text-align: center;
+    }
+    @include adaptiveValue("margin-bottom", 40, 30);
+  }
+  // .main__training-programm-text-action
+  &__training-programm-text-action {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 143%;
+    text-align: center;
+    position: relative;
+  }
+  // .main__training-programm-text-action-hover
+  &__training-programm-text-action-hover {
+    color: $green;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  // .main__training-programm-text-action-hover-popup
+  &__training-programm-text-action-hover-popup {
+    opacity: 0;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: 15;
+    width: 350px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: -200px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid $green;
+    display: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+  }
+  // .main__training-programm-text-action-hover-popup-title
+  &__training-programm-text-action-hover-popup-title {
+    color: $green;
+    font-weight: 700;
+    font-size: 24px;
+  }
+  // .main__training-programm-text-action-hover-popup-description
+  &__training-programm-text-action-hover-popup-description {
+    font-size: 16px;
+  }
+}
+
+.showActionPopup {
+  opacity: 1;
+}
+
+//section whyChooseUs
+.main {
+  // .main__whyChooseUs
+  &__whyChooseUs {
+    height: 1000px;
+    overflow: hidden;
+    @media (max-width: $mobile) {
+      @include adaptiveValue("height", 1200, 1320);
+    }
+  }
+  // .main__whyChooseUs-container
+  &__whyChooseUs-container {
+    height: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("/img/hellocloudsup.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: -17%;
+      width: 134%;
+      padding-top: 19%;
+    }
+    &::after {
+      content: "";
+      background-image: url("/img/helloclouds.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 10;
+      bottom: -5%;
+      @media (max-width: $mobile) {
+        bottom: 0;
+      }
+      right: -17%;
+      width: 134%;
+      padding-top: 19%;
+    }
+  }
+  &__whyChooseUs-fakeForCrish {
+    &::before {
+      content: "";
+      background-image: url("/img/crishWhySecectUs.png");
+      @media (max-width: $tablet) {
+        width: 55%;
+        padding-top: 50.95%;
+      }
+      @media (max-width: $mobile) {
+        width: 75%;
+        padding-top: 67.95%;
+      }
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 5;
+      left: -14%;
+      bottom: 0;
+      width: 47%;
+      padding-top: 41.95%;
+    }
+  }
+  &__whyChooseUs-content {
+    position: absolute;
+    width: 100%;
+    height: 58%;
+    @media (max-width: $mobile) {
+      padding-top: 100px;
+      @include adaptiveValue("padding-top", 100, 0);
+      height: 85%;
+    }
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  // .main__whyChooseUs-title
+  &__whyChooseUs-title {
+    color: $whiteText;
+    margin-bottom: 60px;
+  }
+  // .main__whyChooseUs-items
+  &__whyChooseUs-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+  .whyChooseUs-items-mb {
+    @include adaptiveValue("margin-bottom", 100, 60);
+  }
+  // .main__whyChooseUs-item
+  &__whyChooseUs-item {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    @media (max-width: $mobile) {
+      max-width: 500px;
+      padding: 0 20px;
+    }
+  }
+  // .main__whyChooseUs-item-number
+  &__whyChooseUs-item-number {
+    font-size: 24px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      z-index: -1;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $green;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  // .main__whyChooseUs-item-title
+  &__whyChooseUs-item-title {
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 133%;
+  }
+  // .main__whyChooseUs-item-description
+  &__whyChooseUs-item-description {
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+
+//====================================================================================================
