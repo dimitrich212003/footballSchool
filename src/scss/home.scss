@@ -99,9 +99,9 @@ body {
     position: relative;
     &::before {
       content: "";
-      background-image: url("/img/hellocrish.png");
+      background-image: url("@img/hellocrish.png");
       @media (max-width: $mobile) {
-        background-image: url("/img/hellocrishMobile.png");
+        background-image: url("@img/hellocrishMobile.png");
         width: 85%;
         padding-top: 135.95%;
       }
@@ -116,7 +116,7 @@ body {
     }
     &::after {
       content: "";
-      background-image: url("/img/helloclouds.png");
+      background-image: url("@img/helloclouds.png");
       background-repeat: no-repeat;
       background-size: 100%;
       position: absolute;
@@ -353,7 +353,7 @@ body {
     position: relative;
     &::before {
       content: "";
-      background-image: url("/img/hellocloudsup.png");
+      background-image: url("@img/hellocloudsup.png");
       background-repeat: no-repeat;
       background-size: 100%;
       position: absolute;
@@ -365,7 +365,7 @@ body {
     }
     &::after {
       content: "";
-      background-image: url("/img/helloclouds.png");
+      background-image: url("@img/helloclouds.png");
       background-repeat: no-repeat;
       background-size: 100%;
       position: absolute;
@@ -382,7 +382,7 @@ body {
   &__whyChooseUs-fakeForCrish {
     &::before {
       content: "";
-      background-image: url("/img/crishWhySecectUs.png");
+      background-image: url("@img/crishWhySecectUs.png");
       @media (max-width: $tablet) {
         width: 55%;
         padding-top: 50.95%;
