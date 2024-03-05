@@ -1,3 +1,38 @@
 //====================================================================================================
+.footer {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  bottom: 0.3%;
+  z-index: 20;
+  color: $whiteText;
+  font-weight: 400;
+  @include adaptiveValue("font-size", 12, 8);
+  line-height: 150%;
+
+  // .footer__container
+  &__container {
+  }
+  // .footer__nav
+  &__nav {
+    margin-bottom: 15px;
+  }
+  // .footer__nav-list
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adaptiveValue("gap", 30, 10);
+  }
+  // .footer__nav-item
+  &__nav-item {
+  }
+  // .footer__text
+  &__text {
+  }
+}
 
 //====================================================================================================
