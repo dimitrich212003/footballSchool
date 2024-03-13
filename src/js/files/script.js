@@ -8,9 +8,9 @@ const nav = document.querySelector(".header__nav");
 const logo = document.querySelector(".header__logo");
 const tel = document.querySelectorAll(".tel");
 const form = document.querySelector(".main__contact-form");
-const btnsScroll = document.querySelectorAll('.btnScroll');
+const btnsScroll = document.querySelectorAll(".btnScroll");
 const contact = document.getElementById("contact");
-
+const price = document.getElementById("price");
 
 const img = document.createElement("img");
 img.src = "./img/logoForBurger.png";
@@ -37,13 +37,15 @@ const actionPopup = document.querySelector(
   ".main__training-programm-text-action-hover-popup"
 );
 
-actionSpan.addEventListener("mouseover", () => {
-  actionPopup.classList.add("showActionPopup");
-});
+if (actionSpan) {
+  actionSpan.addEventListener("mouseover", () => {
+    actionPopup.classList.add("showActionPopup");
+  });
 
-actionSpan.addEventListener("mouseout", () => {
-  actionPopup.classList.remove("showActionPopup");
-});
+  actionSpan.addEventListener("mouseout", () => {
+    actionPopup.classList.remove("showActionPopup");
+  });
+}
 
 window.addEventListener("DOMContentLoaded", function () {
   [].forEach.call(tel, function (input) {
@@ -87,15 +89,14 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  let enteredValue;
-  tel.forEach((el) => {
-    enteredValue = el.value;  
-  });
-  console.log("Отправленное значение:", enteredValue);
-});
-
+// form.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   let enteredValue;
+//   tel.forEach((el) => {
+//     enteredValue = el.value;
+//   });
+//   console.log("Отправленное значение:", enteredValue);
+// });
 
 btnsScroll.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -107,5 +108,16 @@ btnsScroll.forEach((btn) => {
   });
 });
 
-
-
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const scrollTo = urlParams.get("scrollTo");
+  if (scrollTo) {
+    let elementToScroll = document.getElementById(scrollTo);
+    if (elementToScroll) {
+      elementToScroll.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }
+});

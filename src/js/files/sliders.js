@@ -34,12 +34,12 @@ function initSliders() {
     new Swiper(".mySwiperMobile", {
       modules: [Navigation, Autoplay, EffectCoverflow],
       effect: "coverflow",
-      grabCursor: false,
+      grabCursor: true,
       slidesPerView: 3, //add(how many slides to show)
       centeredSlides: true,
       slidesPerView: "auto",
       onlyExternal: true,
-      allowTouchMove: false,
+      allowTouchMove: true,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -48,7 +48,7 @@ function initSliders() {
         slideShadows: true,
       },
       autoplay: {
-        delay: 3000,
+        delay: 2000,
         disableOnInteraction: false,
       },
       // loop: true,

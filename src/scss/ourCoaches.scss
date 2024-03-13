@@ -1,0 +1,217 @@
+.ourCoaches {
+  // .ourCoaches__hello-container
+  &__hello-container {
+    height: 100%;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("@img/ourCoaches.png");
+      @media (max-width: $tablet) {
+        right: -150px;
+      }
+      @media (max-width: $mobile) {
+        background-image: url("@img/ourCoachesMobile.png");
+        width: 150%;
+        padding-top: 159.95%;
+        right: -120px;
+      }
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 5;
+      right: -355px;
+      bottom: 0;
+      width: 84%;
+      padding-top: 87.95%;
+    }
+    &::after {
+      content: "";
+      background-image: url("@img/helloclouds.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: -17%;
+      width: 134%;
+      padding-top: 19%;
+    }
+  }
+
+  &__hello-content {
+    max-width: 36.25rem;
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 40, 20);
+    position: absolute;
+    z-index: 15;
+    top: 30%;
+  }
+}
+
+// trainerInfo section
+.ourCoaches {
+  // .ourCoaches__trainerInfo-section
+  &__trainerInfo-section {
+    background-image: url("@img/trainerInfoBg.jpg");
+    background-repeat: no-repeat;
+    background-position: center 0;
+    background-size: cover;
+    height: 100%;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-top", 100, 30);
+      @include adaptiveValue("padding-bottom", 200, 70);
+    }
+    color: #2e363e;
+  }
+
+  // .ourCoaches__trainerInfo-card
+  &__trainerInfo-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    @media (max-width: $tablet) {
+      &:first-child {
+        margin-bottom: 40px;
+      }
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 70px;
+    }
+  }
+  // .ourCoaches__trainerInfo-list
+  &__trainerInfo-list {
+    flex: 0 1 40%;
+    @media (max-width: $mobile) {
+      &.order-green-trainer {
+        order: 2;
+      }
+    }
+  }
+  &__life-footbal {
+    margin-bottom: 30px;
+    &.red-trainer {
+      background-color: #d50000;
+    }
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  // .ourCoaches__trainerInfo-list-item
+  &__trainerInfo-list-item {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 20, 16);
+    line-height: 150%;
+    margin-left: 20px;
+    @include adaptiveValue("margin-bottom", 30, 20);
+    position: relative;
+    transition: all 0.2s ease;
+    position: relative;
+    @media (min-width: $tablet) {
+      right: 0;
+      &:hover {
+        right: -3px;
+      }
+    }
+    &.red-trainer::before {
+      background-color: #d50000;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #00732e;
+      top: 10px;
+      left: -20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // .ourCoaches__trainerInfo-img
+  &__trainerInfo-img {
+    flex: 0 1 50%;
+    position: relative;
+    @media (max-width: $mobile) {
+      &.order-green-trainer {
+        order: 1;
+      }
+    }
+    & > img {
+      width: 100%;
+      transition: all 0.2s ease;
+      position: relative;
+      @media (min-width: $tablet) {
+        top: 0;
+        &:hover {
+          top: -3px;
+        }
+      }
+    }
+  }
+  // .ourCoaches__trainerInfo-person-data
+  &__trainerInfo-person-data {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 80%;
+    @media (max-width: $mobile) {
+      top: 87%;
+    }
+    &.green-trainer-block {
+      left: -20%;
+      @media (max-width: $mobile) {
+        width: 70%;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+    &.red-trainer-block {
+      right: -20%;
+      @media (max-width: $mobile) {
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+  // .ourCoaches__trainerInfo-person-name
+  &__trainerInfo-person-name {
+    color: #fff;
+    &.green-trainer-name {
+      background-color: #00732e;
+    }
+    &.red-trainer-name {
+      background-color: #d50000;
+    }
+  }
+  // .ourCoaches__trainerInfo-person-position
+  &__trainerInfo-person-position {
+    color: #2e363e;
+    background: #f2f6fa;
+    display: inline-block;
+  }
+
+  &__trainerInfo-person-name,
+  &__trainerInfo-person-position {
+    padding: 15px;
+    border-radius: 5px;
+    transform: skew(-5deg);
+    position: relative;
+    overflow: hidden;
+    @include adaptiveValue("font-size", 20, 14);
+    line-height: 16px;
+    & > span {
+      display: block;
+      position: relative;
+      transform: skew(5deg);
+    }
+  }
+}
