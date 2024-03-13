@@ -24,7 +24,7 @@
             </article>
           </div>
         </section>
-        <section class="main__training-programm white-section main__section">
+        <section id="price" class="main__training-programm white-section main__section">
           <div class="main__container">
             <h1 class="main__training-programm-title title">
               Программы тренировок
@@ -332,43 +332,19 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                   <!-- Slides -->
-                  <div class="swiper-slide">
+                  <div class="swiper-slide main__galery-slider-slide">
                     <img src="@img/photo.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-1.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-2.png" />
                   </div>
-                </div>
-              </div>
-              <div class="swiper mySwiperMobile">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                  <!-- Slides -->
-                  <div class="swiper-slide">
+                  <div class="swiper-slide main__galery-slider-slide">
                     <img src="@img/photo-3.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-4.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-5.png" />
                   </div>
-                </div>
-              </div>
-              <div class="swiper mySwiperMobile">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                  <!-- Slides -->
-                  <div class="swiper-slide">
+                  <div class="swiper-slide main__galery-slider-slide">
                     <img src="@img/photo-6.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-7.png" />
-                  </div>
-                  <div class="swiper-slide">
                     <img src="@img/photo-8.png" />
                   </div>
                 </div>
@@ -394,7 +370,9 @@
           </div>
         </section>
       </main>
-      @@include('html/_footer.htm',{})
+      <footer class="footer">
+        @@include('html/_footer.htm',{})
+      </footer>
     </div>
     @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
   </body>

@@ -628,6 +628,16 @@ body {
       display: block;
     }
   }
+  &__galery-slider-slide {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    & > img {
+      display: block;
+    }
+  }
   &__galery-btn {
     @include adaptiveValue("width", 300, 200);
     @media (max-width: $mobile) {
@@ -775,9 +785,9 @@ body {
   }
   // .main__contact-btn
   &__contact-btn {
-    width: 300px;
+    width: 300px !important;
     @media (max-width: $mobile) {
-      width: 250px;
+      width: 250px !important;
     }
     height: 60px;
   }

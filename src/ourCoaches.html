@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Наши тренеры" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="main">
+        <section class="main__helo-section black-section main__section">
+          <div class="main__container ourCoaches__hello-container">
+            <article class="main__hello-content ourCoaches__hello-content">
+              <h1 class="main__hello-title">Наши тренеры</h1>
+              <h4 class="main__hello-subtitle">
+                <span
+                  >У нас молодой тренерский состав, который способен найти общий
+                  язык с каждым ребенком, подобрав для него индивидуальный
+                  комплекс тренировок 
+                </span>
+              </h4>
+              <button class="main__hello-btn btn goToPrice">
+                Записаться на пробную тренировку
+              </button>
+            </article>
+          </div>
+        </section>
+        <section class="ourCoaches__trainerInfo-section main__section">
+          <div class="main__container">
+            <div class="ourCoaches__trainerInfo-content">
+              <article class="ourCoaches__trainerInfo-card">
+                <ul class="ourCoaches__trainerInfo-list order-green-trainer">
+                  <li
+                    class="main__life-footbal life-footbal ourCoaches__life-footbal"
+                  >
+                    ЖИВИФУТБОЛОМ
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item">
+                    Выпускник ФК Спартак Москва. Участник и призер российских и
+                    европейских турниров по футболу среди Юниоров.
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item">
+                    Образование - московский институт физической культурыи
+                    спорта
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item">
+                    По специальности педагог-психолог, опыт работы детским
+                    тренером более 10 лет.
+                  </li>
+                </ul>
+                <div class="ourCoaches__trainerInfo-img order-green-trainer">
+                  <img src="@img/trainer1.png" alt="" />
+                  <div
+                    class="ourCoaches__trainerInfo-person-data green-trainer-block"
+                  >
+                    <p
+                      class="ourCoaches__trainerInfo-person-name green-trainer-name"
+                    >
+                      <span> Боровской Александр Александрович </span>
+                    </p>
+                    <p class="ourCoaches__trainerInfo-person-position">
+                      <span>Старший тренер</span>
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article class="ourCoaches__trainerInfo-card">
+                <div class="ourCoaches__trainerInfo-img">
+                  <img src="@img/trainer2.png" alt="" />
+                  <div
+                    class="ourCoaches__trainerInfo-person-data red-trainer-block"
+                  >
+                    <p
+                      class="ourCoaches__trainerInfo-person-name red-trainer-name"
+                    >
+                      <span>Рощеня Владислав Евгеньевич</span>
+                    </p>
+                    <p class="ourCoaches__trainerInfo-person-position">
+                      <span>Старший тренер</span>
+                    </p>
+                  </div>
+                </div>
+                <ul class="ourCoaches__trainerInfo-list">
+                  <li
+                    class="main__life-footbal life-footbal ourCoaches__life-footbal red-trainer"
+                  >
+                    ЖИВИФУТБОЛОМ
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item red-trainer">
+                    Имеет образование фитнес-тренера
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item red-trainer">
+                    Закончил курсы Барселоны по футболу! Учился у топовых
+                    тренеров Испании
+                  </li>
+                  <li class="ourCoaches__trainerInfo-list-item red-trainer">
+                    Игровая карьера, профессиональный футболист, играл в Латвии
+                    в высшем дивизионе.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer black-footer">
+        @@include('html/_footer.htm',{})
+      </footer>
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
+</html>
