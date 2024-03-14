@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Контакты" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="main">
+        <section
+          class="main__helo-section contact__hello-section black-section main__section"
+        >
+          <div class="main__container contact__hello-container">
+            <article class="contact__hello-content">
+              <h1 class="main__hello-title">Контакты</h1>
+              <ul class="contact__hello-list">
+                <li class="contact__hello-list-item">
+                  <p class="contact__hello-list-item-title">ТЕЛЕФОНЫ</p>
+                  <p class="contact__hello-list-item-data">
+                    <a href="tel:+74956271010">+7 (495) 627-10-10</a>
+                  </p>
+                  <p class="contact__hello-list-item-data">
+                    <a href="tel:+79854779597">+7 (985) 477-95-97</a>
+                  </p>
+                </li>
+                <li class="contact__hello-list-item">
+                  <p class="contact__hello-list-item-title">EMAIL</p>
+                  <p class="contact__hello-list-item-data">
+                    <a href="mailto:cr7school@mail.ru">cr7school@mail.ru</a>
+                  </p>
+                </li>
+                <li class="contact__hello-list-item">
+                  <p class="contact__hello-list-item-title">
+                    САЙТ СПОРТИВНОГО КОМПЛЕКСА
+                  </p>
+                  <p class="contact__hello-list-item-data">
+                    <a href="https://www.games-liga.ru">https://www.games-liga.ru</a>
+                  </p>
+                </li>
+                <li class="contact__hello-list-item">
+                  <p class="contact__hello-list-item-title">НАШ АДРЕС</p>
+                  <p class="contact__hello-list-item-data">
+                    Москва, Электролитный проезд, дом 3, строение 5, спортивный
+                    комплекс Высшая Лига
+                  </p>
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div id="map" class="contact__map"></div>
+        </section>
+      </main>
+    </div>
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=8de09623-a994-4ae3-acc9-e81d68168ffd&lang=ru_RU"
+    ></script>
+    @@include('html/_js.htm',{})
+  </body>
+</html>

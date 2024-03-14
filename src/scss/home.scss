@@ -161,13 +161,13 @@ body {
   &__hello-title {
     font-weight: 700;
     font-size: 48px;
-    @include adaptiveValue("font-size", 48, 36);
-    line-height: 60px;
+    @include adaptiveValue("font-size", 36, 24);
+    line-height: 50px;
     @media (max-width: $tablet) {
-      line-height: 55px;
+      line-height: 40px;
     }
     @media (max-width: $mobile) {
-      line-height: 50px;
+      line-height: 35px;
     }
   }
   // .main__hello-subtitle
@@ -175,8 +175,7 @@ body {
     display: flex;
     flex-direction: column;
     font-weight: 400;
-    font-size: 24px;
-    @include adaptiveValue("font-size", 24, 18);
+    @include adaptiveValue("font-size", 20, 16);
     line-height: 143%;
   }
   // .main__hello-btn
