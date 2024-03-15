@@ -1,9 +1,8 @@
 .contact {
   // .contact__hello-section
   &__hello-section {
-    height: 100vh;
+    height: 100vh !important;
     @media (max-width: $tablet) {
-      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
