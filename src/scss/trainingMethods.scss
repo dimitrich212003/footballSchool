@@ -1,0 +1,138 @@
+.trainingMethods {
+  // .trainingMethods__section
+  &__section {
+    @media (min-width: 3500px) {
+      height: 100vh;
+    }
+    height: 100%;
+    padding-bottom: 150px;
+    @include adaptiveValue("padding-top", 150, 100);
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-bottom", 200, 70);
+    }
+    color: #f2f6fa;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("@img/trainingMethodsBg.png");
+      background-repeat: no-repeat;
+      @include adaptiveValue("background-size", 1500, 700);
+      position: absolute;
+      background-position: center 100%;
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  // .trainingMethods__сontainer
+  &__сontainer {
+    height: 100%;
+  }
+
+  // .trainingMethods__title
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 30);
+  }
+  // .trainingMethods__subtitle
+  &__subtitle {
+    @include adaptiveValue("margin-bottom", 50, 30);
+  }
+
+  // .trainingMethods__article
+  &__article {
+    &:first-child {
+      @include adaptiveValue("margin-bottom", 100, 50);
+    }
+  }
+  // .trainingMethods__cards
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  // .trainingMethods__cards-flex
+  &__cards-flex {
+    display: flex;
+    gap: 15px;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+    @media (min-width: $mobile) {
+      &:first-child {
+        & > div {
+          &:first-child {
+            flex: 1 1 58%;
+          }
+          &:last-child {
+            flex: 1 1 38%;
+          }
+        }
+      }
+      &:last-child {
+        & > div {
+          &:first-child {
+            flex: 1 1 38%;
+          }
+          &:last-child {
+            flex: 1 1 58%;
+          }
+        }
+      }
+    }
+  }
+  // .trainingMethods__cards-flex-item
+  &__cards-flex-item {
+    border: 2px solid #f2f6fa;
+    padding-left: 30px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("height", 250, 200);
+  }
+  &__cards-flex-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  // .trainingMethods__cards-flex-item-number
+  &__cards-flex-item-number {
+    font-weight: 600;
+    @include adaptiveValue("font-size", 48, 32);
+    color: #00732e;
+  }
+  // .trainingMethods__cards-flex-item-text
+  &__cards-flex-item-text {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 20, 16);
+    @include adaptiveValue("line-height", 29, 24);
+    & > p {
+      max-width: 400px;
+    }
+  }
+  // .trainingMethods__text-and-img
+  &__text-and-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+  // .trainingMethods__text
+  &__text {
+    flex: 0 1 45%;
+    text-align: justify;
+    & > p {
+      font-weight: 400;
+      @include adaptiveValue("font-size", 20, 16);
+      line-height: 160%;
+    }
+  }
+  // .trainingMethods__img
+  &__img {
+    flex: 0 1 45%;
+    & > img {
+      max-width: 100%;
+    }
+  }
+}
