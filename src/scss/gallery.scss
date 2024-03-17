@@ -1,0 +1,108 @@
+.gallery {
+  // .gallery__section
+  &__section {
+    // @media (min-width: 3500px) {
+    //   height: 100vh;
+    // }
+    min-height: 80vh;
+    color: #f2f6fa;
+  }
+  &__container {
+    padding-bottom: 200px;
+    @include adaptiveValue("padding-top", 150, 100);
+    @media (max-width: $mobile) {
+      @include adaptiveValue("padding-bottom", 200, 120);
+    }
+    min-height: 80vh;
+    position: relative;
+    &::before {
+      content: "";
+      background-image: url("@img/helloclouds.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: -17%;
+      width: 134%;
+      padding-top: 14%;
+      @media (max-width: $mobile) {
+        padding-top: 19%;
+      }
+    }
+  }
+  // .gallery__content
+  &__content {
+  }
+  // .gallery__text
+  &__text {
+    @include adaptiveValue("margin-bottom", 80, 50);
+  }
+  // .gallery__title
+  &__title {
+    margin-bottom: 10px;
+  }
+  // .gallery__subtitle
+  &__subtitle {
+  }
+  // .gallery__images
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &__chapter {
+    &:first-child > div {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+    }
+  }
+  // .gallery__chapter-title
+  &__chapter-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    @include adaptiveValue("font-size", 22, 18);
+    line-height: 133%;
+    display: inline-block;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      width: 15px;
+      height: 1.5px;
+      background-color: #f2f6fa;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      transition: all 0.3s ease-in-out;
+    }
+    &::before {
+      transform: rotate(40deg);
+      right: -29px;
+    }
+    &::after {
+      transform: rotate(-40deg);
+      right: -40px;
+    }
+    &.active::before {
+      transform: rotate(-40deg);
+      right: -29px;
+    }
+    &.active::after {
+      transform: rotate(40deg);
+      right: -40px;
+    }
+  }
+  // .gallery__chapter-img
+  &__chapter-img {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      height 0.3s ease;
+  }
+}

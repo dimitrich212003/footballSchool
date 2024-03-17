@@ -24,7 +24,10 @@
             </article>
           </div>
         </section>
-        <section id="price" class="main__training-programm white-section main__section">
+        <section
+          id="price"
+          class="main__training-programm white-section main__section"
+        >
           <div class="main__container">
             <h1 class="main__training-programm-title title">
               Программы тренировок
@@ -45,7 +48,9 @@
                   </div>
                   <div class="main__training-programm-item-price-and-btn">
                     <p class="main__training-programm-item-price">Бесплатно</p>
-                    <button class="main__training-programm-item-btn btn btnScroll">
+                    <button
+                      class="main__training-programm-item-btn btn btnScroll"
+                    >
                       Записаться
                     </button>
                   </div>
@@ -66,7 +71,9 @@
                   </div>
                   <div class="main__training-programm-item-price-and-btn">
                     <p class="main__training-programm-item-price">9000 ₽</p>
-                    <button class="main__training-programm-item-btn btn btnScroll">
+                    <button
+                      class="main__training-programm-item-btn btn btnScroll"
+                    >
                       Записаться
                     </button>
                   </div>
@@ -87,7 +94,9 @@
                   </div>
                   <div class="main__training-programm-item-price-and-btn">
                     <p class="main__training-programm-item-price">11000 ₽</p>
-                    <button class="main__training-programm-item-btn btn btnScroll">
+                    <button
+                      class="main__training-programm-item-btn btn btnScroll"
+                    >
                       Записаться
                     </button>
                   </div>
@@ -350,29 +359,38 @@
                 </div>
               </div>
             </div>
-            <button class="main__galery-btn btn">Посмотреть все фото</button>
+            <button onclick="window.location.href = 'gallery.html'" class="main__galery-btn btn">Посмотреть все фото</button>
           </div>
         </section>
         <section id="contact" class="main__сontact black-section main__section">
           <div class="main__сontact-container main__container">
             <div class="main__contact-content">
-              <h1 class="main__contact-title title">
-                Запись на тренировку!
-              </h1>
-              <p class="main__contact-subtitle">Перезвоним вам в ближайшее время</p>
+              <h1 class="main__contact-title title">Запись на тренировку!</h1>
+              <p class="main__contact-subtitle">
+                Перезвоним вам в ближайшее время
+              </p>
               <form class="main__contact-form" action="" method="post">
                 <div class="main__contact-phone-form">
-                  <input type="tel" value="" class="tel" placeholder="Номер телефона">
+                  <input
+                    type="tel"
+                    value=""
+                    class="tel"
+                    placeholder="Номер телефона"
+                  />
                 </div>
-                <button type="submit" data-popup="#myPopup" class="main__contact-btn btn">Записаться</button>
+                <button
+                  type="submit"
+                  data-popup="#myPopup"
+                  class="main__contact-btn btn"
+                >
+                  Записаться
+                </button>
               </form>
             </div>
           </div>
         </section>
       </main>
-      <footer class="footer">
-        @@include('html/_footer.htm',{})
-      </footer>
+      <footer class="footer">@@include('html/_footer.htm',{})</footer>
     </div>
     @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
   </body>
