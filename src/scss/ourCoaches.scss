@@ -12,7 +12,7 @@
       @media (max-width: $mobile) {
         background-image: url("@img/ourCoachesMobile.png");
         width: 150%;
-        padding-top: 159.95%;
+        padding-top: 130.95%;
         right: -120px;
       }
       background-repeat: no-repeat;
@@ -45,7 +45,20 @@
     @include adaptiveValue("gap", 40, 20);
     position: absolute;
     z-index: 15;
-    top: 30%;
+    top: 12%;
+    @media (max-width: $mobile) {
+      max-width: 25.25rem;
+    }
+    @media (min-width: $mobile) {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__hello-btn {
+    @media (max-width: $mobile) {
+      margin: 0;
+    }
   }
 }
 

@@ -141,8 +141,10 @@ body {
       padding-top: 19%;
     }
   }
+  
   // .main__hello-content
   &__hello-content {
+    position: absolute;
     max-width: 36.25rem;
     display: flex;
     flex-direction: column;
