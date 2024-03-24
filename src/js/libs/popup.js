@@ -8,7 +8,7 @@ import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } f
 import { flsModules } from "../files/modules.js";
 
 // Класс Popup
-class Popup {
+export class Popup {
 	constructor(options) {
 		let config = {
 			logging: true,
@@ -110,7 +110,7 @@ class Popup {
 			// Клик по кнопке "открыть"
 			const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
 			if (buttonOpen) {
-				e.preventDefault();
+				// e.preventDefault();
 				this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ?
 					buttonOpen.getAttribute(this.options.attributeOpenButton) :
 					'error';
@@ -118,7 +118,7 @@ class Popup {
 					if (!this.isOpen) this.lastFocusEl = buttonOpen;
 					this.targetOpen.selector = `${this._dataValue}`;
 					this._selectorOpen = true;
-					this.open();
+					// this.open();
 					return;
 
 				} else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);

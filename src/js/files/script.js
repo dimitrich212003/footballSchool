@@ -1,7 +1,8 @@
 // Подключение функционала "Чертогов Фрилансера"
-import { isMobile } from "./functions.js";
+import axios from "axios";
+import { Popup } from "../libs/popup.js";
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+// import { flsModules } from "./modules.js";
 
 const burgerIcon = document.querySelector(".header__burger");
 const nav = document.querySelector(".header__nav");
@@ -10,11 +11,23 @@ const tel = document.querySelectorAll(".tel");
 const form = document.querySelector(".main__contact-form");
 const btnsScroll = document.querySelectorAll(".btnScroll");
 const contact = document.getElementById("contact");
+const btnSendMessage = document.querySelector(".main__contact-btn");
 const price = document.getElementById("price");
+const sendInput = document.querySelector(".tel");
+
+const TOKEN = "6954779819:AAGrSubT6WogUOEj01uGNpVDGv-XAqkiS6k";
+const CHAT_ID = "-1001991035384";
+const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+const sendPopup = new Popup();
 
 const img = document.createElement("img");
 img.src = "./img/logoForBurger.png";
 img.className = "header__logo-img-active";
+
+//POPUP
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
 
 burgerIcon.addEventListener("click", () => {
   burgerIcon.classList.toggle("active");
@@ -86,17 +99,11 @@ window.addEventListener("DOMContentLoaded", function () {
     input.addEventListener("focus", mask, false);
     input.addEventListener("blur", mask, false);
     input.addEventListener("keydown", mask, false);
+    if (this.value.length === 17) {
+      console.log("привет начальник");
+    }
   });
 });
-
-// form.addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   let enteredValue;
-//   tel.forEach((el) => {
-//     enteredValue = el.value;
-//   });
-//   console.log("Отправленное значение:", enteredValue);
-// });
 
 btnsScroll.forEach((btn) => {
   btn.addEventListener("click", (e) => {
@@ -122,4 +129,39 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+if (sendInput) {
+  sendInput.addEventListener("input", (event) => {
+    console.log(event.target.value.length);
+    if (event.target.value.length >= 17) {
+      btnSendMessage.classList.add("activate_send");
+    } else {
+      btnSendMessage.classList.remove("activate_send");
+    }
+  });
+}
 
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let message = `<b>Заявка с сайта!</b>\n`;
+    message += `<b>Номер телефона: </b>${this.phone.value}`;
+
+    axios
+      .post(URL_API, {
+        chat_id: CHAT_ID,
+        parse_mode: "HTML",
+        text: message,
+      })
+      .then((res) => {
+        form.reset();
+        btnSendMessage.classList.remove("activate_send");
+        sendPopup.open("#myPopupSuccessfull");
+      })
+      .catch((err) => {
+        sendPopup.open("#myPopupError");
+        console.log(err);
+      })
+      .finally(() => {});
+  });
+}
