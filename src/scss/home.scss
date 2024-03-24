@@ -141,7 +141,7 @@ body {
       padding-top: 19%;
     }
   }
-  
+
   // .main__hello-content
   &__hello-content {
     position: absolute;
@@ -791,6 +791,13 @@ body {
       width: 250px !important;
     }
     height: 60px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    opacity: 0.5;
+    &.activate_send {
+      pointer-events: auto;
+      opacity: 1;
+    }
   }
 }
 
@@ -806,7 +813,7 @@ body {
     border-radius: 5px;
     max-width: 500px;
     padding: 50px;
-    @media(max-width: $mobile) {
+    @media (max-width: $mobile) {
       padding: 30px;
     }
   }
