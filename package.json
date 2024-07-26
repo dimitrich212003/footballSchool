@@ -44,7 +44,7 @@
 		"gulp-zip": "latest",
 		"html-webpack-plugin": "latest",
 		"inputmask": "latest",
-		"lightgallery": "latest",
+		"lightgallery": "^2.7.2",
 		"load-plugins": "latest",
 		"mini-css-extract-plugin": "2.4.7",
 		"nouislider": "latest",

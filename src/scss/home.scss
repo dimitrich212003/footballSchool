@@ -1,4 +1,6 @@
 //====================================================================================================
+
+
 $green: #00732e;
 $whiteText: #f2f6fa;
 
@@ -657,6 +659,7 @@ body {
   background-position: center;
   background-size: cover;
   max-width: 370px !important;
+  cursor: pointer;
   @media (max-width: 391px) {
     width: 350px !important;
   }
