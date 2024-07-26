@@ -34,11 +34,12 @@ import '@scss/libs/gallery/lightgallery.scss';
 // import '@scss/libs/gallery/lg-relative-caption.scss';
 
 // Все стили
-// import '@scss/libs/gallery/lightgallery-bundle.scss';
+import '@scss/libs/gallery/lightgallery-bundle.scss';
 
 // Запуск
-const galleries = document.querySelectorAll('[data-gallery]');
+const galleries = document.querySelectorAll(".lightgallery");
 if (galleries.length) {
+	console.log("галерея работает");
 	let galleyItems = [];
 	galleries.forEach(gallery => {
 		galleyItems.push({
